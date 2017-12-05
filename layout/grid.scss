@@ -1,0 +1,22 @@
+.wrapper:after,
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  }
+
+[class^='column-'] {
+  float: left;
+  padding: 1em;
+  width: 100%;
+  min-height: 1px;
+  }
+
+@for $i from 1 through $grid-columns {
+  .column-#{$i} {
+    width: 100% / $grid-columns * $i;
+    }
+  .offset-#{$i} {
+    margin-left: 100% / $grid-columns * $i;
+    }
+  }
